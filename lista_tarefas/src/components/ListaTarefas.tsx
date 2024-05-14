@@ -20,3 +20,16 @@ const ListaTarefas: React.FC<ListaTarefasProps> = ({ tarefas }) => {
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+    containerLista: {
+      flex: 1,
+    },
+    tarefa: {
+      padding: 10,
+      borderBottomColor: '#ccc',
+      borderBottomWidth: 1,
+    },
+  });
+  
+  export default ListaTarefas;
