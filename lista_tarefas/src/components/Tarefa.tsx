@@ -21,3 +21,22 @@ const Tarefa: React.FC<TarefaProps> = ({ tarefa, onDelete, onToggle }) => {
     </TouchableOpacity>
   );
 };
+const styles = StyleSheet.create({
+    tarefa: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      padding: 10,
+      borderBottomColor: '#ccc',
+      borderBottomWidth: 1,
+    },
+    concluida: {
+      textDecorationLine: 'line-through',
+    },
+    deletar: {
+      color: 'red',
+      fontWeight: 'bold',
+    },
+  });
+  
+  export default Tarefa;
