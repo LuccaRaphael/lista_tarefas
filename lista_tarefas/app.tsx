@@ -26,3 +26,28 @@ export default function App() {
       tarefa.id === id ? { ...tarefa, concluida: !tarefa.concluida } : tarefa
     ));
   };
+
+  return (
+    <SafeAreaView style={styles.container}>
+      <CadastrarTarefa onAdicionarTarefa={adicionarTarefa} />
+      <ListaTarefas tarefas={tarefas} />
+      {tarefas.map(tarefa => (
+        <Tarefa
+          key={tarefa.id}
+          tarefa={tarefa}
+          onDelete={() => removerTarefa(tarefa.id)}
+          onToggle={() => alternarConclusaoTarefa(tarefa.id)}
+        />
+      ))}
+    </SafeAreaView>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    paddingHorizontal: 20,
+    paddingTop: 50,
+  },
+});
